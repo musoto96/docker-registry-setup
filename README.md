@@ -1,3 +1,3 @@
 # docker-registry-setup
 
-Files in cert folder are placeholders, replace with your own.
+Files in cert and auth folder are placeholders, replace with your own.
