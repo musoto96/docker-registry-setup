@@ -9,5 +9,14 @@ else
   sleep 5
 fi
 
-docker login registry.domain.com
-kubectl create secret generic regcred --from-file=.dockerconfigjson=${HOME}/.docker/config.json --type=kubernetes.io/dockerconfigjson
+docker login registry.sbr-mx.com
+kubectl version --client
+if [ $? ge 127 ]
+then
+  echo "kubectl not installed, exiting"
+else 
+  echo "Creating credentials"
+  kubectl create secret generic regcred --from-file=.dockerconfigjson=${HOME}/.docker/config.json --type=kubernetes.io/dockerconfigjson
+  echo "Done"
+fi
+
