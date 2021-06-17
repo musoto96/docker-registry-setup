@@ -9,7 +9,7 @@ else
   sleep 5
 fi
 
-docker login registry.sbr-mx.com
+docker login registry.domain.com
 kubectl version --client
 if [ $? ge 127 ]
 then
